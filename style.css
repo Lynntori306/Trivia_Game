@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(-90deg, rgb(23, 154, 177), rgb(96, 197, 146));   
+    padding: 0;  
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+h1 {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+align-items: center;
+display: flex;
+padding-top: 50px;
+
+}
+
+.container {
+    display: inline;
+    margin: auto;
+    
+}
+
+.Btn {
+background-color: azure;
+padding: 5px;
+margin-bottom: 10px;
+    
+}
+
+
+
+
+
+img {
+    height: 40px;
+}
+
