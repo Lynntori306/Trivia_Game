@@ -29,7 +29,11 @@ margin-bottom: 10px;
 }
 
 
+#questionContainer {
+display: none;
 
+
+}
 
 
 img {
