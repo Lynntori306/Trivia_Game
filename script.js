@@ -1,13 +1,17 @@
+document.getElementById("startBtn").addEventListener("click", startQuiz);
+var btnContainer = document.getElementById("btnOptions");
+var quesitonCounter = 0
+//increment the question country by 1
+
 function startQuiz() {
     var questionContainer = document.getElementById("questionContainer");
     questionContainer.style.display = "block";
-
-
-    var timeleft = 5;
+    setNextQuestion(quesitonCounter);
+    
+    var timeleft = 3;
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
     var Timer = setInterval(function () {
-
-        startQuiz();
-
+        
         if (timeleft <= 0) {
             clearInterval(Timer);
             document.getElementById("countdown").innerHTML = "Times-up!";
@@ -17,19 +21,24 @@ function startQuiz() {
         timeleft -= 1;
     }, 1000);
 }
-document.getElementById("startBtn").addEventListener("click", startQuiz())
 
 
+function setNextQuestion(questionNum) {
+// loop through current question options 
+//for each option create a btn that apends to the DOM
+for (var i = 0; i < questions[questionNum].options.length; i++){
 
+    // create an html btn
+    var btn = document.createElement("BUTTON");
+    // add text to the btn
+    btn.innerHTML = questions[questionNum].options[i];
+    //add style to EL
+    btn.classList.add("btn-options");
+    //add btn to the DOM
+    btnContainer.appendChild(btn);
 
-function setNextQuestion() {
-
-
-
-    let questionElement = document.getElementById("question");
-    let answerButtonsElement = document.getElementById("answerBtn");
-
-
+}    
+quesitonCounter++;
 
 }
 
@@ -81,14 +90,6 @@ var questions = [
     {
         question: "How many bones are in the human body",
         options: ["206", "270", "242", "188"],
-        answer: "270"
+        answer: "206"
     }
 ];
-
-
-
-
-
-
-
-
